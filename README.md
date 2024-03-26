@@ -29,11 +29,11 @@ To play Throwdown_Showdown, you'll need Python installed on your computer. If yo
 Once Python is set up, you can download Throwdown_Showdown by cloning the repository:
 
 ````bash
-git clone https://github.com/YourUsername/Throwdown_Showdown.git
+git clone https://github.com/YourUsername/Throwdown_Showdown.git```
 
 Navigate to the project directory:
 
-bash
+```bash
 cd Throwdown_Showdown```
 
 ## How to Play
