@@ -9,6 +9,7 @@ Welcome to Throwdown_Showdown, the classic Rock, Paper, Scissors game brought to
   - [Introduction](#introduction)
   - [Features](#features)
   - [Installation](#installation)
+  - [How to Play](#how-to-play)
   - [Contributing](#contributing)
   - [License](#license)
 
@@ -28,13 +29,15 @@ To play Throwdown_Showdown, you'll need Python installed on your computer. If yo
 
 Once Python is set up, you can download Throwdown_Showdown by cloning the repository:
 
-````bash
-git clone https://github.com/YourUsername/Throwdown_Showdown.git```
+```bash
+git clone https://github.com/YourUsername/Throwdown_Showdown.git
+```
 
 Navigate to the project directory:
 
 ```bash
-cd Throwdown_Showdown```
+cd Throwdown_Showdown
+```
 
 ## How to Play
 
@@ -42,7 +45,7 @@ To start the game, run the following command in your terminal:
 
 ```bash
 python main.py
-````
+```
 
 Follow the on-screen prompts to make your choice between Rock, Paper, or Scissors, and see if you can outsmart the AI!
 
