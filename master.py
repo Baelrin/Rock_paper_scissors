@@ -1,39 +1,50 @@
 import random
 
-user_wins = 0
-ai_wins = 0
 
-options = ["rock", "paper", "scissors"]
+def get_ai_choice(options):
+    return random.choice(options)
 
-while True:
-    user_input = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
-    if user_input == "q":
-        break
 
-    if user_input not in options:
-        print("Only rock, paper or scissors.")
-        continue
-
-    # rock: 0, paper: 1, scissors: 2
-    random_number = random.randint(0, 2)
-    ai_pick = options[random_number]
-    print(f"AI picked {ai_pick}.")
-
-    if (
-        user_input == "rock"
-        and ai_pick == "scissors"
-        or user_input == "paper"
-        and ai_pick == "rock"
-        or user_input == "scissors"
-        and ai_pick == "paper"
-    ):
-        print("You won!")
-        user_wins += 1
-
+def determine_winner(user_choice, ai_choice, win_conditions):
+    if user_choice == ai_choice:
+        return None
+    elif ai_choice in win_conditions[user_choice]:
+        return "user"
     else:
-        print("You lost!")
-        ai_wins += 1
+        return "ai"
 
-print(f"You won {user_wins} times.")
-print(f"AI won {ai_wins} times.")
-print("Goodbye!")
+
+def main():
+    user_wins = 0
+    ai_wins = 0
+    options = ["rock", "paper", "scissors"]
+    win_conditions = {"rock": ["scissors"], "paper": ["rock"], "scissors": ["paper"]}
+
+    while True:
+        user_input = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
+        if user_input == "q":
+            break
+        if user_input not in options:
+            print("Only rock, paper, or scissors.")
+            continue
+
+        ai_pick = get_ai_choice(options)
+        print(f"AI picked {ai_pick}.")
+
+        winner = determine_winner(user_input, ai_pick, win_conditions)
+        if winner == "user":
+            print("You won!")
+            user_wins += 1
+        elif winner == "ai":
+            print("You lost!")
+            ai_wins += 1
+        else:
+            print("It's a draw!")
+
+    print(f"You won {user_wins} times.")
+    print(f"AI won {ai_wins} times.")
+    print("Goodbye!")
+
+
+if __name__ == "__main__":
+    main()
